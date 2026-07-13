@@ -25,6 +25,11 @@
         "command": "/hurricane-brief",
         "description": "Generate the hurricane-season protocol review",
         "should_escape": false
+      },
+      {
+        "command": "/orphan-check",
+        "description": "(demo) Run the orphaned-decision check now",
+        "should_escape": false
       }
     ]
   },
