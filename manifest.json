@@ -1,0 +1,64 @@
+{
+  "display_information": {
+    "name": "REMEMBER",
+    "description": "Preserves institutional memory for disaster response volunteer organizations.",
+    "background_color": "#2eb67d"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "REMEMBER",
+      "always_online": true
+    },
+    "app_home": {
+      "home_tab_enabled": true,
+      "messages_tab_enabled": true,
+      "messages_tab_read_only_enabled": true
+    },
+    "slash_commands": [
+      {
+        "command": "/remember-search",
+        "description": "Search past decisions and threads",
+        "usage_hint": "[your question]",
+        "should_escape": false
+      },
+      {
+        "command": "/hurricane-brief",
+        "description": "Generate the hurricane-season protocol review",
+        "should_escape": false
+      },
+      {
+        "command": "/orphan-check",
+        "description": "(demo) Run the orphaned-decision check now",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "user": [
+        "search:read.public",
+        "search:read.private"
+      ],
+      "bot": [
+        "app_mentions:read",
+        "chat:write",
+        "chat:write.customize",
+        "commands"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention",
+        "app_home_opened"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": true
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}
