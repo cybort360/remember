@@ -57,7 +57,7 @@ Conventions are defined in [`CLAUDE.md`](./CLAUDE.md).
 ## Setup
 
 1. **Join the Slack Developer Program** and provision a sandbox workspace.
-2. **Create the Slack app** (Socket Mode). Bot scopes: `app_mentions:read`, `chat:write`, `chat:write.customize`, `users:read`, `commands`. User scopes: `search:read.public`, `search:read.private` (for the RTS memory search). Event subscriptions: `app_mention`, `app_home_opened`. Slash commands: `/remember-search`, `/hurricane-brief`, `/orphan-check` (temporary, demo only).
+2. **Create the Slack app** (Socket Mode). Bot scopes: `app_mentions:read`, `chat:write`, `chat:write.customize`, `users:read`, `commands`. User scopes: `search:read.public`, `search:read.private` (for the RTS memory search). Event subscriptions: `app_mention`, `app_home_opened`. Slash commands: `/remember-search`, `/hurricane-brief`.
 3. **Install dependencies:**
    ```
    npm install

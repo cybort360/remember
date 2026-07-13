@@ -7,7 +7,7 @@ async function main(): Promise<void> {
     const { App } = await import('@slack/bolt');
     const { handleMention } = await import('./handlers/mention');
     const { handleHomeTab } = await import('./handlers/homeTab');
-    const { handleRememberSearch, handleHurricaneBrief, handleOrphanCheck } =
+    const { handleRememberSearch, handleHurricaneBrief } =
       await import('./handlers/slashCommands');
     const { scheduleHurricaneBrief } = await import('./triggers/seasonalTrigger');
 
@@ -22,7 +22,6 @@ async function main(): Promise<void> {
 
     app.command('/remember-search', handleRememberSearch);
     app.command('/hurricane-brief', handleHurricaneBrief);
-    app.command('/orphan-check', handleOrphanCheck); // temporary: on-demand orphan-monitor test for the demo
 
     app.error(async (error) => {
       logger.error('Unhandled Bolt error', { error });
