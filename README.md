@@ -57,7 +57,7 @@ Conventions are defined in [`CLAUDE.md`](./CLAUDE.md).
 ## Setup
 
 1. **Join the Slack Developer Program** and provision a sandbox workspace.
-2. **Create the Slack app** (Socket Mode). Scopes: `app_mentions:read`, `chat:write`, `chat:write.customize`, `search:read`, `users:read`, `commands`. Event subscriptions: `app_mention`, `app_home_opened`. Slash commands: `/remember-search`, `/hurricane-brief`, `/orphan-check` (temporary, demo only).
+2. **Create the Slack app** (Socket Mode). Bot scopes: `app_mentions:read`, `chat:write`, `chat:write.customize`, `users:read`, `commands`. User scopes: `search:read.public`, `search:read.private` (for the RTS memory search). Event subscriptions: `app_mention`, `app_home_opened`. Slash commands: `/remember-search`, `/hurricane-brief`, `/orphan-check` (temporary, demo only).
 3. **Install dependencies:**
    ```
    npm install
@@ -69,6 +69,7 @@ Conventions are defined in [`CLAUDE.md`](./CLAUDE.md).
    | `SLACK_BOT_TOKEN` | Bot OAuth token (`xoxb-`) |
    | `SLACK_APP_TOKEN` | App-level token for Socket Mode (`xapp-`) |
    | `SLACK_SIGNING_SECRET` | Request signing secret |
+   | `SLACK_USER_TOKEN` | User token (`xoxp-`) with `search:read.public`/`search:read.private` — required for RTS memory search |
    | `AIRTABLE_API_KEY` | Airtable personal access token |
    | `AIRTABLE_BASE_ID` | Base ID (`appXXXXXXXX`) |
    | `AIRTABLE_VOLUNTEERS_TABLE_ID` | Volunteers table ID |
@@ -117,7 +118,7 @@ See [`DEMO.md`](./DEMO.md) for the full recording script.
 | `npm run dev` | Run in development with reload |
 | `npm run build` | Type-check + compile to `dist/` |
 | `npm start` | Run compiled output |
-| `npm test` | Jest unit tests (11 suites) |
+| `npm test` | Jest unit tests (12 suites, 59 tests) |
 | `npm run boot-check` | Dummy-credential boot check (no real tokens needed) |
 | `npm run seed` | Seed Airtable demo data |
 | `npm run seed:slack` | Seed Slack demo threads |
